@@ -6,7 +6,6 @@
     padding: 0;
 }
 
-
 .main {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -50,6 +49,14 @@
     border-radius: 10px;
     border-color: rgb(235, 235, 235);
     text-align: center;
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+}
+
+.game-container:hover{
+    background: rgb(216, 216, 216);
+    transform: scale(1.03);
+    
 }
 
 .game__image img {     
@@ -65,8 +72,26 @@
     font-weight: bold;
 }
 
-.game__platform img {
-     width: 30%;
+.game__platform {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.game__platform svg {
+    width: 50px;
+    height: 50px;
+    transition: fill 0.3s ease-in-out;
+}
+
+.game__platform .desktop__platform:hover svg {
+    fill: red
+}
+
+.game__platform .console__platform:hover svg {
+    fill: red
 }
 
 .more-info-button {
