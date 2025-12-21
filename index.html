@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
     <title>PlayZen</title>
 </head>
 <body>
     <div class="main">
         <div class="header">
 
-            <div class="play-zen-logo">
+            <div class="header__play-zen-logo">
                 <a href="">
                     <img src="playzen.svg" alt="playzen-logo">
                 </a>
             </div>
-            <div class="nav">
+            <div class="header__nav">
                 <div>
                 <a href="">Home</a> 
                 </div>
@@ -29,21 +30,22 @@
         </div>
 
         <div class="main-title">
-            <h1>
+            <h2>
             Game catalog
-            </h1>
+            </h2>
         </div>
         
         <div class="games-container">
             
+            <!-- PUBG Container -->
             <div class="game-container">
-                <div class="game__image">
+                <div class="game-container__game-image">
                     <img src="pubg.jpg" alt="pubg">                 
                 </div>
-                <div class="game__title">PUBG: Battlegrounds</div>
-                <div class="game__genre">Shooter, Battle Royale</div>
-                <div class="game__platform">
-                    <div class="desktop__platform">
+                <div class="game-container__game-title">PUBG: Battlegrounds</div>
+                <div class="game-container__game-genre">Shooter, Battle Royale</div>
+                <div class="game-container__game-platform">
+                    <div class="game-container__game-platform desktop-platform">
                         <a href="">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="548.172px" height="548.172px" viewBox="0 0 548.172 548.172" style="enable-background:new 0 0 548.172 548.172;"
@@ -61,7 +63,7 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="console__platform">
+                    <div class="game-container__game-platform console-platform">
                         <a href="">
                             <svg data-name="Layer 1" id="Layer_1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M31,11.44A6.49,6.49,0,0,0,19.82,7H12.18A6.49,6.49,0,0,0,1,11.44,84.11,84.11,0,0,0,0,23.53c0,2.42,1,4,2.92,4.36A5.41,5.41,0,0,0,4,28a3.9,3.9,0,0,0,3.82-2.82c0.39-1.1,1.09-2.62,1.52-3.54A4,4,0,0,0,14.87,19h2.26a4,4,0,0,0,5.52,2.64c0.43,0.91,1.13,2.43,1.52,3.54A3.9,3.9,0,0,0,28,28a5.4,5.4,0,0,0,1.09-.11C31,27.5,32,25.95,32,23.53A84.11,84.11,0,0,0,31,11.44ZM6.89,24.85a3,3,0,0,1-3.77,2.06C1.37,26.54,1,24.87,1,23.53a78.9,78.9,0,0,1,.62-9.28A6.52,6.52,0,0,0,7,18v0a4,4,0,0,0,1.5,3.11C8,22.13,7.3,23.68,6.89,24.85ZM11,21a3,3,0,0,1-3-3,2.89,2.89,0,0,1,0-.43l0-.57H7.5a5.5,5.5,0,1,1,4.57-2.44L11.75,15l0.53,0.25A3,3,0,0,1,11,21Zm4-3a4,4,0,0,0-1.82-3.35A6.48,6.48,0,0,0,13,8H19a6.48,6.48,0,0,0-.22,6.65A4,4,0,0,0,17,18H15Zm3,0a3,3,0,0,1,1.73-2.71L20.25,15l-0.32-.48A5.5,5.5,0,1,1,24.52,17H23.88L24,17.57A2.89,2.89,0,0,1,24,18,3,3,0,0,1,18,18Zm10.88,8.91a3,3,0,0,1-3.77-2.06C24.7,23.68,24,22.13,23.5,21.11A4,4,0,0,0,25,18v0a6.51,6.51,0,0,0,5.38-3.73A79,79,0,0,1,31,23.53C31,24.87,30.63,26.54,28.88,26.91Z"/>
@@ -77,18 +79,19 @@
                     </div>
                 </div>
                 <div>
-                    <button class="more-info-button">More Info</button>
+                    <button class="game-container__more-info-button" data-modal="modalPUBG">More Info</button>                
                 </div>
             </div>
 
+            <!-- Arc Raiders Container -->
             <div class="game-container">
-                <div class="game__image">
+                <div class="game-container__game-image">
                     <img src="arc-raiders-logo.jpg" alt="arc-raiders-logo">                 
                 </div>
-                <div class="game__title">Arc Raiders</div>
-                <div class="game__genre">Extraction Shooter</div>
-                <div class="game__platform">
-                    <div class="desktop__platform">
+                <div class="game-container__game-title">Arc Raiders</div>
+                <div class="game-container__game-genre">Extraction Shooter</div>
+                <div class="game-container__game-platform">
+                    <div class="game-container__game-platform desktop-platform">
                         <a href="">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="548.172px" height="548.172px" viewBox="0 0 548.172 548.172" style="enable-background:new 0 0 548.172 548.172;"
@@ -106,7 +109,7 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="console__platform">
+                    <div class="game-container__game-platform console-platform">
                         <a href="">
                             <svg data-name="Layer 1" id="Layer_1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M31,11.44A6.49,6.49,0,0,0,19.82,7H12.18A6.49,6.49,0,0,0,1,11.44,84.11,84.11,0,0,0,0,23.53c0,2.42,1,4,2.92,4.36A5.41,5.41,0,0,0,4,28a3.9,3.9,0,0,0,3.82-2.82c0.39-1.1,1.09-2.62,1.52-3.54A4,4,0,0,0,14.87,19h2.26a4,4,0,0,0,5.52,2.64c0.43,0.91,1.13,2.43,1.52,3.54A3.9,3.9,0,0,0,28,28a5.4,5.4,0,0,0,1.09-.11C31,27.5,32,25.95,32,23.53A84.11,84.11,0,0,0,31,11.44ZM6.89,24.85a3,3,0,0,1-3.77,2.06C1.37,26.54,1,24.87,1,23.53a78.9,78.9,0,0,1,.62-9.28A6.52,6.52,0,0,0,7,18v0a4,4,0,0,0,1.5,3.11C8,22.13,7.3,23.68,6.89,24.85ZM11,21a3,3,0,0,1-3-3,2.89,2.89,0,0,1,0-.43l0-.57H7.5a5.5,5.5,0,1,1,4.57-2.44L11.75,15l0.53,0.25A3,3,0,0,1,11,21Zm4-3a4,4,0,0,0-1.82-3.35A6.48,6.48,0,0,0,13,8H19a6.48,6.48,0,0,0-.22,6.65A4,4,0,0,0,17,18H15Zm3,0a3,3,0,0,1,1.73-2.71L20.25,15l-0.32-.48A5.5,5.5,0,1,1,24.52,17H23.88L24,17.57A2.89,2.89,0,0,1,24,18,3,3,0,0,1,18,18Zm10.88,8.91a3,3,0,0,1-3.77-2.06C24.7,23.68,24,22.13,23.5,21.11A4,4,0,0,0,25,18v0a6.51,6.51,0,0,0,5.38-3.73A79,79,0,0,1,31,23.53C31,24.87,30.63,26.54,28.88,26.91Z"/>
@@ -122,18 +125,19 @@
                     </div>
                 </div>
                 <div>
-                    <button class="more-info-button">More Info</button>
+                    <button class="game-container__more-info-button" data-modal="modalArcRaiders">More Info</button>
                 </div>
             </div>
 
+            <!-- BF6 Container -->
             <div class="game-container">
-                <div class="game__image">
+                <div class="game-container__game-image">
                     <img src="bf6-logo.jpeg" alt="Battlefield-6-logo">                 
                 </div>
-                <div class="game__title">Battlefield 6</div>
-                <div class="game__genre">Shooter</div>
-                <div class="game__platform">
-                    <div class="desktop__platform">
+                <div class="game-container__game-title">Battlefield 6</div>
+                <div class="game-container__game-genre">First-person shooter</div>
+                <div class="game-container__game-platform">
+                    <div class="game-container__game-platform desktop-platform">
                         <a href="">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="548.172px" height="548.172px" viewBox="0 0 548.172 548.172" style="enable-background:new 0 0 548.172 548.172;"
@@ -151,7 +155,7 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="console__platform">
+                    <div class="game-container__game-platform console-platform">
                         <a href="">
                             <svg data-name="Layer 1" id="Layer_1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M31,11.44A6.49,6.49,0,0,0,19.82,7H12.18A6.49,6.49,0,0,0,1,11.44,84.11,84.11,0,0,0,0,23.53c0,2.42,1,4,2.92,4.36A5.41,5.41,0,0,0,4,28a3.9,3.9,0,0,0,3.82-2.82c0.39-1.1,1.09-2.62,1.52-3.54A4,4,0,0,0,14.87,19h2.26a4,4,0,0,0,5.52,2.64c0.43,0.91,1.13,2.43,1.52,3.54A3.9,3.9,0,0,0,28,28a5.4,5.4,0,0,0,1.09-.11C31,27.5,32,25.95,32,23.53A84.11,84.11,0,0,0,31,11.44ZM6.89,24.85a3,3,0,0,1-3.77,2.06C1.37,26.54,1,24.87,1,23.53a78.9,78.9,0,0,1,.62-9.28A6.52,6.52,0,0,0,7,18v0a4,4,0,0,0,1.5,3.11C8,22.13,7.3,23.68,6.89,24.85ZM11,21a3,3,0,0,1-3-3,2.89,2.89,0,0,1,0-.43l0-.57H7.5a5.5,5.5,0,1,1,4.57-2.44L11.75,15l0.53,0.25A3,3,0,0,1,11,21Zm4-3a4,4,0,0,0-1.82-3.35A6.48,6.48,0,0,0,13,8H19a6.48,6.48,0,0,0-.22,6.65A4,4,0,0,0,17,18H15Zm3,0a3,3,0,0,1,1.73-2.71L20.25,15l-0.32-.48A5.5,5.5,0,1,1,24.52,17H23.88L24,17.57A2.89,2.89,0,0,1,24,18,3,3,0,0,1,18,18Zm10.88,8.91a3,3,0,0,1-3.77-2.06C24.7,23.68,24,22.13,23.5,21.11A4,4,0,0,0,25,18v0a6.51,6.51,0,0,0,5.38-3.73A79,79,0,0,1,31,23.53C31,24.87,30.63,26.54,28.88,26.91Z"/>
@@ -167,18 +171,19 @@
                     </div>
                 </div>
                 <div>
-                    <button class="more-info-button">More Info</button>
+                    <button class="game-container__more-info-button" data-modal="modalBF6">More Info</button>
                 </div>
             </div>
 
+            <!-- COD BO7 Container -->
             <div class="game-container">
-                <div class="game__image">
+                <div class="game-container__game-image">
                     <img src="codbo7.jpg" alt="Call-Of-Duty-Black-Ops 7-logo">                 
                 </div>
-                <div class="game__title">Call Of Duty Black Ops 7</div>
-                <div class="game__genre">Shooter</div>
-                <div class="game__platform">
-                    <div class="desktop__platform">
+                <div class="game-container__game-title">Call Of Duty Black Ops 7</div>
+                <div class="game-container__game-genre">First-person shooter</div>
+                <div class="game-container__game-platform">
+                    <div class="game-container__game-platform desktop-platform">
                         <a href="">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="548.172px" height="548.172px" viewBox="0 0 548.172 548.172" style="enable-background:new 0 0 548.172 548.172;"
@@ -196,7 +201,7 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="console__platform">
+                    <div class="game-container__game-platform console-platform">
                         <a href="">
                             <svg data-name="Layer 1" id="Layer_1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M31,11.44A6.49,6.49,0,0,0,19.82,7H12.18A6.49,6.49,0,0,0,1,11.44,84.11,84.11,0,0,0,0,23.53c0,2.42,1,4,2.92,4.36A5.41,5.41,0,0,0,4,28a3.9,3.9,0,0,0,3.82-2.82c0.39-1.1,1.09-2.62,1.52-3.54A4,4,0,0,0,14.87,19h2.26a4,4,0,0,0,5.52,2.64c0.43,0.91,1.13,2.43,1.52,3.54A3.9,3.9,0,0,0,28,28a5.4,5.4,0,0,0,1.09-.11C31,27.5,32,25.95,32,23.53A84.11,84.11,0,0,0,31,11.44ZM6.89,24.85a3,3,0,0,1-3.77,2.06C1.37,26.54,1,24.87,1,23.53a78.9,78.9,0,0,1,.62-9.28A6.52,6.52,0,0,0,7,18v0a4,4,0,0,0,1.5,3.11C8,22.13,7.3,23.68,6.89,24.85ZM11,21a3,3,0,0,1-3-3,2.89,2.89,0,0,1,0-.43l0-.57H7.5a5.5,5.5,0,1,1,4.57-2.44L11.75,15l0.53,0.25A3,3,0,0,1,11,21Zm4-3a4,4,0,0,0-1.82-3.35A6.48,6.48,0,0,0,13,8H19a6.48,6.48,0,0,0-.22,6.65A4,4,0,0,0,17,18H15Zm3,0a3,3,0,0,1,1.73-2.71L20.25,15l-0.32-.48A5.5,5.5,0,1,1,24.52,17H23.88L24,17.57A2.89,2.89,0,0,1,24,18,3,3,0,0,1,18,18Zm10.88,8.91a3,3,0,0,1-3.77-2.06C24.7,23.68,24,22.13,23.5,21.11A4,4,0,0,0,25,18v0a6.51,6.51,0,0,0,5.38-3.73A79,79,0,0,1,31,23.53C31,24.87,30.63,26.54,28.88,26.91Z"/>
@@ -212,7 +217,7 @@
                     </div>
                 </div>
                 <div>
-                    <button class="more-info-button">More Info</button>
+                    <button class="game-container__more-info-button" data-modal="modalCODBO7">More Info</button>
                 </div>
             </div>
         
@@ -225,5 +230,366 @@
         </div>
 
     </div>
+
+<!-- PUBG MODAL -->
+<div class="modal-more-info" id="modalPUBG">
+                        
+    <div class="modal-more-info-content">
+
+        <div class="modal-more-info-content-header">
+            
+            <div class="modal-more-info-content-close-svg">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.6066 21.3934C22.2161 21.0029 21.5829 21.0029 21.1924 21.3934C20.8019 21.7839 20.8019 22.4171 21.1924 22.8076L22.6066 21.3934ZM40.9914 42.6066C41.3819 42.9971 42.0151 42.9971 42.4056 42.6066C42.7961 42.2161 42.7961 41.5829 42.4056 41.1924L40.9914 42.6066ZM21.1924 41.1924C20.8019 41.5829 20.8019 42.2161 21.1924 42.6066C21.5829 42.9971 22.2161 42.9971 22.6066 42.6066L21.1924 41.1924ZM42.4056 22.8076C42.7961 22.4171 42.7961 21.7839 42.4056 21.3934C42.0151 21.0029 41.3819 21.0029 40.9914 21.3934L42.4056 22.8076ZM21.1924 22.8076L40.9914 42.6066L42.4056 41.1924L22.6066 21.3934L21.1924 22.8076ZM22.6066 42.6066L42.4056 22.8076L40.9914 21.3934L21.1924 41.1924L22.6066 42.6066Z" fill="black"/>
+                </svg>
+            </div>
+
+            <div class="modal-more-info-content-header-img">
+                <img src="pubg.jpg" alt="pubg">
+            </div>
+
+            <div class="modal-more-info-content-header-title">
+                <h2>PUBG: Battlegrounds</h2>
+            </div>
+
+            <div class="modal-more-info-content-header-platforms-label">
+                <div>Platforms:</div>
+            </div>
+            
+            <div class="modal-more-info-content-header-platforms-value">
+                <span>
+                    <a href="">PC (Windows)</a>
+                    <a href="">PlayStation 5</a>
+                    <a href="">Xbox Series X|S</a>
+                </span>
+            </div> 
+
+            <div class="modal-more-info-content-header-releaseDates-label">
+                <div>Release Dates:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-releaseDates-value">
+                <div>23.03.2017</div>
+            </div>
+
+            <div class="modal-more-info-content-header-publisher-label">
+                <div>Publisher:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-publisher-value">
+                <div>Krafton</div>
+            </div>
+
+            <div class="modal-more-info-content-header-developer-label">
+                <div>Developer:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-developer-value">
+                <div>PUBG Studios</div>
+            </div>
+            
+            <div class="modal-more-info-content-header-genre-label">
+                <div>Genre:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-genre-value">
+                <span>
+                    <a href="">Shooter, Battle Royale</a>
+                </span>
+            </div>
+            
+            <div class="modal-more-info-content-header-engine-label">
+                <div>Engine:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-engine-value">
+                <div>Unreal Engine 4</div>
+            </div>
+            
+        </div>
+
+        <div class="modal-more-info-content-body">
+            <h2>Description</h2>
+            <p>PUBG: BATTLEGROUNDS is a popular, free-to-play online multiplayer battle royale game where up to 100 players parachute onto a large map, scavenge for weapons and gear, and fight to be the last person or team standing as the playable area shrinks over time, forcing confrontation. It emphasizes tactical survival, looting, and shooting, offering solo, duo, or squad gameplay.</p>
+        </div>
+
+        <div class="modal-more-info-content-footer">
+            <button class="modal-more-info-content-close-btn">Close</button>
+        </div>
+
+    </div>
+                      
+</div>
+
+<!-- ARC RAIDERS MODAL -->
+<div class="modal-more-info" id="modalArcRaiders">
+                        
+    <div class="modal-more-info-content">
+
+        <div class="modal-more-info-content-header">
+            
+            <div class="modal-more-info-content-close-svg">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.6066 21.3934C22.2161 21.0029 21.5829 21.0029 21.1924 21.3934C20.8019 21.7839 20.8019 22.4171 21.1924 22.8076L22.6066 21.3934ZM40.9914 42.6066C41.3819 42.9971 42.0151 42.9971 42.4056 42.6066C42.7961 42.2161 42.7961 41.5829 42.4056 41.1924L40.9914 42.6066ZM21.1924 41.1924C20.8019 41.5829 20.8019 42.2161 21.1924 42.6066C21.5829 42.9971 22.2161 42.9971 22.6066 42.6066L21.1924 41.1924ZM42.4056 22.8076C42.7961 22.4171 42.7961 21.7839 42.4056 21.3934C42.0151 21.0029 41.3819 21.0029 40.9914 21.3934L42.4056 22.8076ZM21.1924 22.8076L40.9914 42.6066L42.4056 41.1924L22.6066 21.3934L21.1924 22.8076ZM22.6066 42.6066L42.4056 22.8076L40.9914 21.3934L21.1924 41.1924L22.6066 42.6066Z" fill="black"/>
+                </svg>
+            </div>
+
+            <div class="modal-more-info-content-header-img">
+                <img src="arc-raiders-logo.jpg" alt="arc-raiders-logo">
+            </div>
+
+            <div class="modal-more-info-content-header-title">
+                <h2>ARC Raiders</h2>
+            </div>
+
+            <div class="modal-more-info-content-header-platforms-label">
+                <div>Platforms:</div>
+            </div>
+            
+            <div class="modal-more-info-content-header-platforms-value">
+                <span>
+                    <a href="">PC (Windows)</a>
+                    <a href="">PlayStation 5</a>
+                    <a href="">Xbox Series X|S</a>
+                </span>
+            </div> 
+
+            <div class="modal-more-info-content-header-releaseDates-label">
+                <div>Release Dates:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-releaseDates-value">
+                <div>30.10.2025</div>
+            </div>
+
+            <div class="modal-more-info-content-header-publisher-label">
+                <div>Publisher:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-publisher-value">
+                <div>Embark Studios</div>
+            </div>
+
+            <div class="modal-more-info-content-header-developer-label">
+                <div>Developer:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-developer-value">
+                <div>Embark Studios</div>
+            </div>
+            
+            <div class="modal-more-info-content-header-genre-label">
+                <div>Genre:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-genre-value">
+                <span>
+                    <a href="">Extraction Shooter</a>
+                </span>
+            </div>
+            
+            <div class="modal-more-info-content-header-engine-label">
+                <div>Engine:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-engine-value">
+                <div>Unreal Engine 5</div>
+            </div>
+            
+        </div>
+
+        <div class="modal-more-info-content-body">
+            <h2>Description</h2>
+            <p>ARC Raiders is a third-person PvPvE extraction shooter where players become "Raiders" scavenging a post-apocalyptic Earth from deadly, mysterious machines called ARC, to gather resources for their underground human settlements like Speranza, balancing high-risk looting with threats from both AI robots and other players, all while trying to extract safely. It blends tense extraction gameplay with exploration and a vibrant world, allowing for both solo and squad play in a fight for survival and resources.</p>           
+        </div>
+
+        <div class="modal-more-info-content-footer">
+            <button class="modal-more-info-content-close-btn">Close</button>
+        </div>
+
+    </div>
+                      
+</div>
+
+<!-- BF6 MODAL -->
+<div class="modal-more-info" id="modalBF6">
+                        
+    <div class="modal-more-info-content">
+
+        <div class="modal-more-info-content-header">
+            
+            <div class="modal-more-info-content-close-svg">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.6066 21.3934C22.2161 21.0029 21.5829 21.0029 21.1924 21.3934C20.8019 21.7839 20.8019 22.4171 21.1924 22.8076L22.6066 21.3934ZM40.9914 42.6066C41.3819 42.9971 42.0151 42.9971 42.4056 42.6066C42.7961 42.2161 42.7961 41.5829 42.4056 41.1924L40.9914 42.6066ZM21.1924 41.1924C20.8019 41.5829 20.8019 42.2161 21.1924 42.6066C21.5829 42.9971 22.2161 42.9971 22.6066 42.6066L21.1924 41.1924ZM42.4056 22.8076C42.7961 22.4171 42.7961 21.7839 42.4056 21.3934C42.0151 21.0029 41.3819 21.0029 40.9914 21.3934L42.4056 22.8076ZM21.1924 22.8076L40.9914 42.6066L42.4056 41.1924L22.6066 21.3934L21.1924 22.8076ZM22.6066 42.6066L42.4056 22.8076L40.9914 21.3934L21.1924 41.1924L22.6066 42.6066Z" fill="black"/>
+                </svg>
+            </div>
+
+            <div class="modal-more-info-content-header-img">
+                <img src="bf6-logo.jpeg" alt="Battlefield-6-logo">
+            </div>
+
+            <div class="modal-more-info-content-header-title">
+                <h2>Battlefield 6</h2>
+            </div>
+
+            <div class="modal-more-info-content-header-platforms-label">
+                <div>Platforms:</div>
+            </div>
+            
+            <div class="modal-more-info-content-header-platforms-value">
+                <span>
+                    <a href="">PC (Windows)</a>
+                    <a href="">PlayStation 5</a>
+                    <a href="">Xbox Series X|S</a>
+                </span>
+            </div> 
+
+            <div class="modal-more-info-content-header-releaseDates-label">
+                <div>Release Dates:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-releaseDates-value">
+                <div>10.10.2025</div>
+            </div>
+
+            <div class="modal-more-info-content-header-publisher-label">
+                <div>Publisher:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-publisher-value">
+                <div>Electronic Arts</div>
+            </div>
+
+            <div class="modal-more-info-content-header-developer-label">
+                <div>Developer:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-developer-value">
+                <div>Battlefield Studios</div>
+            </div>
+            
+            <div class="modal-more-info-content-header-genre-label">
+                <div>Genre:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-genre-value">
+                <span>
+                    <a href="">First-person shooter</a>
+                </span>
+            </div>
+            
+            <div class="modal-more-info-content-header-engine-label">
+                <div>Engine:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-engine-value">
+                <div>Frostbite</div>
+            </div>
+            
+        </div>
+
+        <div class="modal-more-info-content-body">
+            <h2>Description</h2>
+            <p>Battlefield 6 is a modern-day, large-scale first-person shooter bringing back classic class-based gameplay and tactical destruction, set in 2028 amidst a global power struggle between NATO and a Private Military Corporation (PMC) called Pax Armata, featuring intense infantry combat, aerial dogfights, and a story campaign focused on an elite Marine Raiders squad, plus a linked battle royale mode.</p>         
+        </div>
+
+        <div class="modal-more-info-content-footer">
+            <button class="modal-more-info-content-close-btn">Close</button>
+        </div>
+
+    </div>
+                      
+</div>
+
+<!-- COD BO7 MODAL -->
+<div class="modal-more-info" id="modalCODBO7">
+                        
+    <div class="modal-more-info-content">
+
+        <div class="modal-more-info-content-header">
+            
+            <div class="modal-more-info-content-close-svg">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.6066 21.3934C22.2161 21.0029 21.5829 21.0029 21.1924 21.3934C20.8019 21.7839 20.8019 22.4171 21.1924 22.8076L22.6066 21.3934ZM40.9914 42.6066C41.3819 42.9971 42.0151 42.9971 42.4056 42.6066C42.7961 42.2161 42.7961 41.5829 42.4056 41.1924L40.9914 42.6066ZM21.1924 41.1924C20.8019 41.5829 20.8019 42.2161 21.1924 42.6066C21.5829 42.9971 22.2161 42.9971 22.6066 42.6066L21.1924 41.1924ZM42.4056 22.8076C42.7961 22.4171 42.7961 21.7839 42.4056 21.3934C42.0151 21.0029 41.3819 21.0029 40.9914 21.3934L42.4056 22.8076ZM21.1924 22.8076L40.9914 42.6066L42.4056 41.1924L22.6066 21.3934L21.1924 22.8076ZM22.6066 42.6066L42.4056 22.8076L40.9914 21.3934L21.1924 41.1924L22.6066 42.6066Z" fill="black"/>
+                </svg>
+            </div>
+
+            <div class="modal-more-info-content-header-img">
+                <img src="codbo7.jpg" alt="Call-Of-Duty-Black-Ops 7-logo">
+            </div>
+
+            <div class="modal-more-info-content-header-title">
+                <h2>Call Of Duty Black Ops 7</h2>
+            </div>
+
+            <div class="modal-more-info-content-header-platforms-label">
+                <div>Platforms:</div>
+            </div>
+            
+            <div class="modal-more-info-content-header-platforms-value">
+                <span>
+                    <a href="">PC (Windows)</a>
+                    <a href="">PlayStation 5</a>
+                    <a href="">Xbox Series X|S</a>
+                </span>
+            </div> 
+
+            <div class="modal-more-info-content-header-releaseDates-label">
+                <div>Release Dates:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-releaseDates-value">
+                <div>14.11.2025</div>
+            </div>
+
+            <div class="modal-more-info-content-header-publisher-label">
+                <div>Publisher:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-publisher-value">
+                <div>Activision</div>
+            </div>
+
+            <div class="modal-more-info-content-header-developer-label">
+                <div>Developer:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-developer-value">
+                <div>Treyarch, Raven Software</div>
+            </div>
+            
+            <div class="modal-more-info-content-header-genre-label">
+                <div>Genre:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-genre-value">
+                <span>
+                    <a href="">First-person shooter</a>
+                </span>
+            </div>
+            
+            <div class="modal-more-info-content-header-engine-label">
+                <div>Engine:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-engine-value">
+                <div>IW 9.0</div>
+            </div>
+            
+        </div>
+
+        <div class="modal-more-info-content-body">
+            <h2>Description</h2>
+            <p>Call of Duty: Black Ops 7 is a futuristic FPS set in 2035, following JSOC's David Mason investigating threats linked to Raul Menendez, featuring an innovative co-op campaign, intense multiplayer, and round-based Zombies, known for its deep character focus and psychological warfare themes within the classic Black Ops universe.</p>  
+        </div>
+
+        <div class="modal-more-info-content-footer">
+            <button class="modal-more-info-content-close-btn">Close</button>
+        </div>
+
+    </div>
+                      
+</div>
+
 </body>
 </html>

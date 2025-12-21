@@ -21,7 +21,7 @@
     margin: 0 20px;
 }
 
-.nav {
+.header__nav {
     display: flex;
     gap: 30px;
 }
@@ -33,7 +33,7 @@
     font-weight: bold;
 }
 
-.play-zen-logo img {
+.header__play-zen-logo img {
     width: 200px;
 }
 
@@ -59,7 +59,7 @@
     
 }
 
-.game__image img {     
+.game-container__game-image img {     
     height: 100%;
     max-height: 300px;
     border-radius: 10px;
@@ -67,12 +67,13 @@
     margin: 20px;
 }
 
-.game__title {
+.game-container__game-title {
+    font-size:20px;
     margin-bottom: 20px;
     font-weight: bold;
 }
 
-.game__platform {
+.game-container__game-platform {
     display: flex;
     justify-content: center;
     width: fit-content;
@@ -80,21 +81,18 @@
     gap: 20px;
 }
 
-.game__platform svg {
+.game-container__game-platform svg {
     width: 50px;
     height: 50px;
     transition: fill 0.3s ease-in-out;
 }
 
-.game__platform .desktop__platform:hover svg {
+.game-container__game-platform :hover svg,
+.game-container__game-platform :hover svg {
     fill: red
 }
 
-.game__platform .console__platform:hover svg {
-    fill: red
-}
-
-.more-info-button {
+.game-container__more-info-button {
     width: 50%;
     height: 35px;
     margin-bottom: 10px;
@@ -104,44 +102,201 @@
     cursor: pointer;
 }
 
+.modal-more-info {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-more-info-content {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.modal-more-info-content-header {
+    display: grid;
+    grid-template-columns: 280px 120px auto;
+    grid-template-rows: repeat(8, 30px);
+    gap: 10px;
+}
+
+.modal-more-info-content-header-img {
+    grid-row: 1 / 9;
+}
+
+.modal-more-info-content-header-img img {
+    height: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.modal-more-info-content-header-title {
+    grid-column: 2 / 4;
+}
+
+.modal-more-info-content-header-platforms-label,
+.modal-more-info-content-header-releaseDates-label,
+.modal-more-info-content-header-publisher-label,
+.modal-more-info-content-header-developer-label,
+.modal-more-info-content-header-genre-label,
+.modal-more-info-content-header-engine-label {
+    font-weight: bold;
+}
+
+.modal-more-info-content-header-platforms-value a,
+.modal-more-info-content-header-genre-value a {
+    text-decoration: none;
+    color: #000;
+    margin-right: 20px;
+}
+
+.modal-more-info-content-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-more-info-content-footer{
+    text-align: center;
+}
+
+.modal-more-info-content-close-btn {
+    width: 100px;
+    height: 35px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(243, 243, 243);
+    cursor: pointer;
+}
+
+.modal-more-info-content-close-btn:hover,
+.modal-more-info-content-close-btn:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-more-info-content-close-svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.modal-more-info-content-close-svg svg {
+    cursor: pointer;
+}
+
+.modal-more-info-content-close-svg svg path{
+    transition: fill 0.3s ease-in-out;
+}
+
+.modal-more-info-content-close-svg:hover svg path{
+    fill: red;
+}
+
 .copyright {
     color: #86898f;
     text-align: center;
 }
 
-.main-title h1 {
+.main-title h2 {
     text-align:center;
     font-size: 40px;
     margin: 10px;
 }
 
-.game__title {
-    font-size:20px
-}
-
-.game__genre {
+.game-container__game-genre {
     font-size: 18px;
 }
 
-.game__platform .desktop-logo {
+.game-container__game-platform .desktop-logo {
     width: 60px;
 }
 
-.game__platform .gamepad-logo {
+.game-container__game-platform .gamepad-logo {
     width: 60px;
 }
 
-.game-container .game__platform a {
+.game-container .game-container__game-platform a {
     text-decoration: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .header {
         flex-direction: column;
     }
     
     .games-container {
         grid-template-columns: repeat(1, 1fr);  
+    }
+
+    .modal-more-info-content-header {
+        display: block;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        position: relative;
+    }
+
+    .modal-more-info-content-header-img {
+        width: 100%;
+        height: 210px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .modal-more-info-content-close-svg {
+        position: absolute;
+        top: -30px;
+        right: -30px;
+    }
+
+    .modal-more-info-content-header-title,
+    .modal-more-info-content-body h2 {
+        text-align: center;
+    }
+
+    .modal-more-info-content-header-platforms-label,
+    .modal-more-info-content-header-releaseDates-label,
+    .modal-more-info-content-header-publisher-label,
+    .modal-more-info-content-header-developer-label,
+    .modal-more-info-content-header-genre-label,
+    .modal-more-info-content-header-engine-label {
+        width: 150px;
+        min-width: 150px;
+        max-width: 150px;
+        text-align: left;
+    }
+
+    .modal-more-info-content-header-platforms-value,
+    .modal-more-info-content-header-releaseDates-value,
+    .modal-more-info-content-header-publisher-value,
+    .modal-more-info-content-header-developer-value,
+    .modal-more-info-content-header-genre-value,
+    .modal-more-info-content-header-engine-value {
+        flex: 1;
+        min-width: 0;
+        box-sizing: border-box;
+        padding: 8px 0;
+    }
+
+    .modal-more-info-content-header-platforms-value a,
+    .modal-more-info-content-header-genre-value a {
+        display: inline-block;
     }
 }
 
@@ -152,4 +307,31 @@
     .games-container {
         grid-template-columns: repeat(2, 1fr);  
     }
+
+    .modal-more-info-content-header-platforms-label,
+    .modal-more-info-content-header-releaseDates-label,
+    .modal-more-info-content-header-publisher-label,
+    .modal-more-info-content-header-developer-label,
+    .modal-more-info-content-header-genre-label,
+    .modal-more-info-content-header-engine-label {
+        width: 140px;
+        min-width: 140px;
+        max-width: 140px;
+        height: auto;
+    }
+
+    .modal-more-info-content-header-platforms-value a,
+    .modal-more-info-content-header-genre-value a {
+        display: inline-block;
+    }
+
+    .modal-more-info-content-header {
+        display: grid;
+        grid-template-columns: 280px 120px auto;
+        grid-template-rows: auto;
+        align-items: start;
+        min-height: auto;
+        gap: 10px;
+    }
+        
 }
