@@ -37,11 +37,13 @@
     width: 200px;
 }
 
-.games-container {
+.dynamic_cards_load {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
+
+
 
 .game-container {
     width: 100%;
@@ -60,7 +62,7 @@
 }
 
 .game-container__game-image img {     
-    height: 100%;
+    height: auto;
     max-height: 300px;
     border-radius: 10px;
     object-fit: cover;
@@ -128,17 +130,17 @@
 
 .modal-more-info-content-header {
     display: grid;
-    grid-template-columns: 280px 120px auto;
-    grid-template-rows: repeat(8, 30px);
+    grid-template-columns: 380px 120px auto;
+    grid-template-rows: repeat(6, 30px);
     gap: 10px;
 }
 
 .modal-more-info-content-header-img {
-    grid-row: 1 / 9;
+    grid-row: 1 / 7;
 }
 
 .modal-more-info-content-header-img img {
-    height: 100%;
+    height: auto;
     max-height: 300px;
     border-radius: 10px;
     object-fit: cover;
@@ -152,8 +154,7 @@
 .modal-more-info-content-header-releaseDates-label,
 .modal-more-info-content-header-publisher-label,
 .modal-more-info-content-header-developer-label,
-.modal-more-info-content-header-genre-label,
-.modal-more-info-content-header-engine-label {
+.modal-more-info-content-header-genre-label {
     font-weight: bold;
 }
 
@@ -236,12 +237,27 @@
     text-decoration: none;
 }
 
+.more_games {
+    text-align: center;
+}
+
+.more_games_btn {       
+        width: 15%;
+        height: 35px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        border-color: rgb(243, 243, 243);
+        cursor: pointer;    
+}
+
+
 @media (max-width: 767px) {
     .header {
         flex-direction: column;
     }
     
-    .games-container {
+    .games-container, .dynamic_cards_load {
         grid-template-columns: repeat(1, 1fr);  
     }
 
@@ -252,12 +268,21 @@
         position: relative;
     }
 
+    .game-container__game-image img {
+        max-height: 150px;
+    }
+    
+    .modal-more-info-content-header-img img {
+        height: auto;
+        max-height: 110px;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
     .modal-more-info-content-header-img {
-        width: 100%;
-        height: 210px;
-        margin-bottom: 20px;
         text-align: center;
     }
+
 
     .modal-more-info-content-close-svg {
         position: absolute;
@@ -274,8 +299,7 @@
     .modal-more-info-content-header-releaseDates-label,
     .modal-more-info-content-header-publisher-label,
     .modal-more-info-content-header-developer-label,
-    .modal-more-info-content-header-genre-label,
-    .modal-more-info-content-header-engine-label {
+    .modal-more-info-content-header-genre-label {
         width: 150px;
         min-width: 150px;
         max-width: 150px;
@@ -286,8 +310,7 @@
     .modal-more-info-content-header-releaseDates-value,
     .modal-more-info-content-header-publisher-value,
     .modal-more-info-content-header-developer-value,
-    .modal-more-info-content-header-genre-value,
-    .modal-more-info-content-header-engine-value {
+    .modal-more-info-content-header-genre-value {
         flex: 1;
         min-width: 0;
         box-sizing: border-box;
@@ -298,13 +321,19 @@
     .modal-more-info-content-header-genre-value a {
         display: inline-block;
     }
+
+    .more_games_btn {       
+        width: 30%;
+           
+    }
 }
+
 
 @media (min-width: 768px) and (max-width: 1024px) {
     .header {
         flex-direction: row;
     }
-    .games-container {
+    .games-container, .dynamic_cards_load {
         grid-template-columns: repeat(2, 1fr);  
     }
 
@@ -312,8 +341,7 @@
     .modal-more-info-content-header-releaseDates-label,
     .modal-more-info-content-header-publisher-label,
     .modal-more-info-content-header-developer-label,
-    .modal-more-info-content-header-genre-label,
-    .modal-more-info-content-header-engine-label {
+    .modal-more-info-content-header-genre-label {
         width: 140px;
         min-width: 140px;
         max-width: 140px;
@@ -327,11 +355,21 @@
 
     .modal-more-info-content-header {
         display: grid;
-        grid-template-columns: 280px 120px auto;
+        grid-template-columns: 360px 120px auto;
         grid-template-rows: auto;
         align-items: start;
         min-height: auto;
         gap: 10px;
     }
+
+    .modal-more-info-content-header-img img {
+        height: auto;
+        max-height: 200px;
+        border-radius: 10px;
+        object-fit: cover;
+    }
         
+    .more_games_btn {       
+        width: 30%;         
+    }
 }

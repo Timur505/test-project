@@ -1,47 +1,179 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const infoButtons = document.querySelectorAll('.game-container__more-info-button'); 
+let gamesData = [];
+let allGames = [];
 
-    infoButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const modalId = this.getAttribute('data-modal');
-            const modal = document.getElementById(modalId);
-            
-            if (modal) {
-                modal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            }
-        });
+async function loadJson() {
+    const response = await fetch('games.json');
+    gamesData = await response.json();
+    allGames = [...gamesData]; 
+
+    showGames();
+}
+
+function showGames() {
+    const container = document.getElementById('dynamicCardsLoad');
+    const gamesShow = gamesData.slice(0, 4);
+    gamesData = gamesData.slice(4);
+
+    gamesShow.forEach(game => {
+        const card = document.createElement('div');
+        card.className = 'game-container';
+        card.innerHTML = `
+            <div class="game-container__game-image">
+                <img src="${game.thumbnail}" alt="${game.title}">
+            </div>
+            <div class="game-container__game-title">${game.title}</div>
+            <div class="game-container__game-genre">${game.genre}</div>
+            <div class="game-container__game-platform">
+                <div class="game-container__game-platform desktop-platform">
+                    <a href="#">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            width="548.172px" height="548.172px" viewBox="0 0 548.172 548.172" style="enable-background:new 0 0 548.172 548.172;"
+                            xml:space="preserve">
+                            <path d="M534.75,49.965c-8.945-8.945-19.694-13.422-32.261-13.422H45.681c-12.562,0-23.313,4.477-32.264,13.422
+                                C4.471,58.913,0,69.663,0,82.226v310.633c0,12.566,4.471,23.315,13.417,32.265c8.951,8.945,19.702,13.414,32.264,13.414h155.318
+                                c0,7.231-1.524,14.661-4.57,22.269c-3.044,7.614-6.09,14.273-9.136,19.981c-3.042,5.715-4.565,9.897-4.565,12.56
+                                c0,4.948,1.807,9.24,5.424,12.847c3.615,3.621,7.898,5.435,12.847,5.435h146.179c4.949,0,9.233-1.813,12.848-5.435
+                                c3.62-3.606,5.427-7.898,5.427-12.847c0-2.468-1.526-6.611-4.571-12.415c-3.046-5.801-6.092-12.566-9.134-20.267
+                                c-3.046-7.71-4.569-15.085-4.569-22.128h155.318c12.56,0,23.309-4.469,32.254-13.414c8.949-8.949,13.422-19.698,13.422-32.265
+                                V82.226C548.176,69.663,543.699,58.913,534.75,49.965z M511.627,319.768c0,2.475-0.903,4.613-2.711,6.424
+                                c-1.81,1.804-3.952,2.707-6.427,2.707H45.681c-2.473,0-4.615-0.903-6.423-2.707c-1.807-1.817-2.712-3.949-2.712-6.424V82.226
+                                c0-2.475,0.902-4.615,2.712-6.423c1.809-1.805,3.951-2.712,6.423-2.712h456.815c2.471,0,4.617,0.904,6.42,2.712
+                                c1.808,1.809,2.711,3.949,2.711,6.423V319.768L511.627,319.768z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="game-container__game-platform console-platform">
+                    <a href="#">
+                        <svg data-name="Layer 1" id="Layer_1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M31,11.44A6.49,6.49,0,0,0,19.82,7H12.18A6.49,6.49,0,0,0,1,11.44,84.11,84.11,0,0,0,0,23.53c0,2.42,1,4,2.92,4.36A5.41,5.41,0,0,0,4,28a3.9,3.9,0,0,0,3.82-2.82c0.39-1.1,1.09-2.62,1.52-3.54A4,4,0,0,0,14.87,19h2.26a4,4,0,0,0,5.52,2.64c0.43,0.91,1.13,2.43,1.52,3.54A3.9,3.9,0,0,0,28,28a5.4,5.4,0,0,0,1.09-.11C31,27.5,32,25.95,32,23.53A84.11,84.11,0,0,0,31,11.44ZM6.89,24.85a3,3,0,0,1-3.77,2.06C1.37,26.54,1,24.87,1,23.53a78.9,78.9,0,0,1,.62-9.28A6.52,6.52,0,0,0,7,18v0a4,4,0,0,0,1.5,3.11C8,22.13,7.3,23.68,6.89,24.85ZM11,21a3,3,0,0,1-3-3,2.89,2.89,0,0,1,0-.43l0-.57H7.5a5.5,5.5,0,1,1,4.57-2.44L11.75,15l0.53,0.25A3,3,0,0,1,11,21Zm4-3a4,4,0,0,0-1.82-3.35A6.48,6.48,0,0,0,13,8H19a6.48,6.48,0,0,0-.22,6.65A4,4,0,0,0,17,18H15Zm3,0a3,3,0,0,1,1.73-2.71L20.25,15l-0.32-.48A5.5,5.5,0,1,1,24.52,17H23.88L24,17.57A2.89,2.89,0,0,1,24,18,3,3,0,0,1,18,18Zm10.88,8.91a3,3,0,0,1-3.77-2.06C24.7,23.68,24,22.13,23.5,21.11A4,4,0,0,0,25,18v0a6.51,6.51,0,0,0,5.38-3.73A79,79,0,0,1,31,23.53C31,24.87,30.63,26.54,28.88,26.91Z"/>
+                            <path d="M9,13h2V10H9V8H6v2H4v3H6v2H9V13ZM8,14H7V12H5V11H7V9H8v2h2v1H8v2Z"/>
+                            <path d="M24.5,10A1.5,1.5,0,1,0,23,8.5,1.5,1.5,0,0,0,24.5,10Zm0-2a0.5,0.5,0,1,1-.5.5A0.5,0.5,0,0,1,24.5,8Z"/>
+                            <path d="M24.5,16A1.5,1.5,0,1,0,23,14.5,1.5,1.5,0,0,0,24.5,16Zm0-2a0.5,0.5,0,1,1-.5.5A0.5,0.5,0,0,1,24.5,14Z"/>
+                            <path d="M21.5,13A1.5,1.5,0,1,0,20,11.5,1.5,1.5,0,0,0,21.5,13Zm0-2a0.5,0.5,0,1,1-.5.5A0.5,0.5,0,0,1,21.5,11Z"/>
+                            <path d="M27.5,13A1.5,1.5,0,1,0,26,11.5,1.5,1.5,0,0,0,27.5,13Zm0-2a0.5,0.5,0,1,1-.5.5A0.5,0.5,0,0,1,27.5,11Z"/>
+                            <path d="M11,16a2,2,0,1,0,2,2A2,2,0,0,0,11,16Zm0,3a1,1,0,1,1,1-1A1,1,0,0,1,11,19Z"/>
+                            <path d="M21,16a2,2,0,1,0,2,2A2,2,0,0,0,21,16Zm0,3a1,1,0,1,1,1-1A1,1,0,0,1,21,19Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <button class="game-container__more-info-button" data-game-id="${game.id}">More Info</button>
+            </div>
+        `;
+        container.appendChild(card);
     });
 
-    const closeSvgButtons = document.querySelectorAll('.modal-more-info-content-close-svg');
-    closeSvgButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const modal = this.closest('.modal-more-info');
-            closeModal(modal);
-        });
-    });
-
-    const closeButtons = document.querySelectorAll('.modal-more-info-content-close-btn');
-    closeButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const modal = this.closest('.modal-more-info');
-            closeModal(modal);
-        });
-    });
-
-    const modals = document.querySelectorAll('.modal-more-info');
-    modals.forEach(modal => {
-        modal.addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeModal(this);
-            }
-        });
-    });
-
-    function closeModal(modal) {
-        if (modal) {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
+    if (gamesData.length === 0) {
+        document.getElementById('moreGamesBtn').style.display = 'none';
     }
+    
+    addModalListeners();
+}
+
+function createModalContent(game) {
+    return `
+        <div class="modal-more-info-content-header">
+            <div class="modal-more-info-content-close-svg" id="modalCloseSvg">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.6066 21.3934C22.2161 21.0029 21.5829 21.0029 21.1924 21.3934C20.8019 21.7839 20.8019 22.4171 21.1924 22.8076L22.6066 21.3934ZM40.9914 42.6066C41.3819 42.9971 42.0151 42.9971 42.4056 42.6066C42.7961 42.2161 42.7961 41.5829 42.4056 41.1924L40.9914 42.6066ZM21.1924 41.1924C20.8019 41.5829 20.8019 42.2161 21.1924 42.6066C21.5829 42.9971 22.2161 42.9971 22.6066 42.6066L21.1924 41.1924ZM42.4056 22.8076C42.7961 22.4171 42.7961 21.7839 42.4056 21.3934C42.0151 21.0029 41.3819 21.0029 40.9914 21.3934L42.4056 22.8076ZM21.1924 22.8076L40.9914 42.6066L42.4056 41.1924L22.6066 21.3934L21.1924 22.8076ZM22.6066 42.6066L42.4056 22.8076L40.9914 21.3934L21.1924 41.1924L22.6066 42.6066Z" fill="black"/>
+                </svg>
+            </div>
+
+            <div class="modal-more-info-content-header-img">
+                <img src="${game.thumbnail}" alt="${game.title}">
+            </div>
+
+            <div class="modal-more-info-content-header-title">
+                <h2>${game.title}</h2>
+            </div>
+
+            <div class="modal-more-info-content-header-platforms-label">
+                <div>Platforms:</div>
+            </div>
+            
+            <div class="modal-more-info-content-header-platforms-value">
+                <span>
+                    <a href="#">${game.platform}</a>
+                </span>
+            </div> 
+
+            <div class="modal-more-info-content-header-releaseDates-label">
+                <div>Release Dates:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-releaseDates-value">
+                <div>${game.release_date}</div>
+            </div>
+
+            <div class="modal-more-info-content-header-publisher-label">
+                <div>Publisher:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-publisher-value">
+                <div>${game.publisher}</div>
+            </div>
+
+            <div class="modal-more-info-content-header-developer-label">
+                <div>Developer:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-developer-value">
+                <div>${game.developer}</div>
+            </div>
+            
+            <div class="modal-more-info-content-header-genre-label">
+                <div>Genre:</div>
+            </div>
+
+            <div class="modal-more-info-content-header-genre-value">
+                <span>
+                    <a href="#">${game.genre}</a>
+                </span>
+            </div>
+        </div>
+
+        <div class="modal-more-info-content-body">
+            <h2>Description</h2>
+            <p>${game.description || game.short_description}</p>
+        </div>
+
+        <div class="modal-more-info-content-footer">
+            <button class="modal-more-info-content-close-btn" id="modalCloseBtn">Close</button>
+        </div>
+    `;
+}
+
+function openGameModal(gameId) {
+    const game = allGames.find(g => g.id == gameId);
+    
+    const modalContent = document.getElementById('modalContent');
+    modalContent.innerHTML = createModalContent(game);
+    
+    const modal = document.getElementById('modalMoreInfo');
+    modal.style.display = 'flex';
+    
+    document.getElementById('modalCloseSvg').addEventListener('click', closeGameModal);
+    document.getElementById('modalCloseBtn').addEventListener('click', closeGameModal);
+}
+
+function closeGameModal() {
+    const modal = document.getElementById('modalMoreInfo');
+    modal.style.display = 'none';
+}
+
+function addModalListeners() {
+    const buttons = document.querySelectorAll('.game-container__more-info-button');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const gameId = this.getAttribute('data-game-id');
+            openGameModal(gameId);
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadJson();
+    document.getElementById('moreGamesBtn').addEventListener('click', showGames);
 });
